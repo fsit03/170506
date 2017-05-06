@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript" src="jquery.min.js"></script>
+</head>
+<body>
+    <a id="link1" class="navLink" href="article1.html">Action 1</a> | 
+    <a id="link2" class="navLink" href="article2.html">Action 2</a>
+    
+    <hr>
+    
+    <div id="main">Main Area</div>
+    
+    <script>
+        $(".navLink").click(function () {
+            var url = $(this).prop("href");
+            $.get(url, function (content) {
+                $("#main").html(content);
+            })
+            event.preventDefault();  
+        })
+    
+
+    </script>
+    
+</body>
+</html>
